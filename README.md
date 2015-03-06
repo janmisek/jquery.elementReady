@@ -1,2 +1,14 @@
-# jquery.nodeReady
-jQuery plugin which fires a callback when an element is added to the DOM
+# jquery.elementReady
+jQuery plugin which fires a callback when an element exists or is added to the DOM
+
+### Usage:
+```
+$(element).elementReady('.class', function() {
+      console.log('element of given selector .class is added or already existed in the DOM');
+});
+```
+
+### Copytight
+Jan Míšek <jan.misek@rclick.cz>
+License: MIT
+
