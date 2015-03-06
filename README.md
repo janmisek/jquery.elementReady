@@ -8,7 +8,7 @@ $(element).elementReady('.class', function() {
 });
 ```
 
-### Copytight
+### Copyleft :)
 Jan Míšek <jan.misek@rclick.cz>
 License: MIT
 
