@@ -56,7 +56,7 @@
         }.bind(this));
 
         // do observation
-        observer.observe(element, {
+        observer.observe(this.get(0), {
             childList: true,
             subtree: true,
             attributes: false,
