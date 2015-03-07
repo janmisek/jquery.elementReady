@@ -15,6 +15,5 @@ bower install jquery-element-ready
 
 
 ### Copyleft :)
-Jan Míšek <jan.misek@rclick.cz>
 License: MIT
 
