@@ -19,11 +19,10 @@
 (function ($) {
 
     $.fn.elementReady = function (selector, callback, options) {
-        $.extend(
-            {
-                exception: true
-            },
-            options || {});
+        options = $.extend({
+            exception: true,
+            one: true
+        }, options || {});
 
         // are elements in DOM already
         var elements = $(selector);
@@ -45,9 +44,13 @@
         var observer = new MutationObserver(function (mutations) {
             mutations.some(function (mutation) {
                 if (mutation.addedNodes) {
-                    var elements = $(mutation.addedNodes).filter(selector);
+
+                    var elements = $(mutation.addedNodes).find(selector);
+
                     if (elements.length) {
-                        observer.disconnect();
+                        if (options.one) {
+                            observer.disconnect();
+                        }
                         callback(elements);
                         return true;
                     }
@@ -59,7 +62,7 @@
         observer.observe(this.get(0), {
             childList: true,
             subtree: true,
-            attributes: false,
+            attributes: true,
             characterData: false
         });
 
